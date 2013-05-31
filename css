@@ -1,0 +1,340 @@
+/* ----- $Reset ----- */
+* { margin:0; padding:0; outline: none; }
+ul { list-style-type:none; }
+
+
+/* ----- $BoxSizing ----- */
+/* apply a natural box layout model to all elements */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+
+/* ----- $Clearfix ----- */
+.clearfix:after {
+  content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+
+/* ----- $Body ----- */
+
+html { 
+    font-size:62.5%;/* set the browser font size to 10px */
+}
+
+body {
+    font-size: 14px; font-size: 1.4rem; /* set our base font size to 14px */
+	font-family: 'HelveticaNeue', arial, helvetica, sans-serif;
+	color: #54585A;
+    line-height: 145%;
+}
+
+
+
+
+
+/* ------------------------------------------------------------
+    LAYOUTS
+------------------------------------------------------------ */
+
+
+
+/* ----- $HiddenClasses ----- */
+.hide,
+.menuCollapsed,  /* off canvas menu */
+.chkMainNav, /* 'checkbox hack' for triggering the off canvas nav (mobile menu) */
+.toggleMenu, /* menu icon for triggering the off canvas nav (mobile menu) */
+.lnkMobileLogin /* login link for mobiles - uses different display/positioning rules */
+    { display: none; }
+
+
+
+/* ------------------------------------------------------------
+    STRUCTURAL CONTAINERS - DESKTOP
+------------------------------------------------------------ */
+
+/* ----- $PageContainers ----- */
+header {
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 -1px 5px #85888D;
+    position: relative; /*this is needed so the shadow shows */
+    }
+    
+.pageMain {
+    background: #636F57;  /* no position: relative or we affect the shadow from the header */  
+}
+
+
+
+/* ----- $ContentContainers ----- */
+.containerCentralContent {
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+}  
+.pageMain .containerCentralContent {
+    padding-top: 30px;
+}
+.content {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
+/* ----- $Nav ----- */
+
+#menu{
+    list-style: none;
+    float: right;
+    position: relative;
+    margin-top: 47px; /*sits aligned with base of header (header 63 - font 16 */
+}
+#menu li{
+    float: left;
+    padding: 0 0 0 20px;
+    position: relative;
+    margin-left: 20px;
+}
+#menu a{
+    border-bottom: 1px solid #FFFFFF;
+    color: #54585A;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+#menu a:hover, #menu a:focus, #menu a.active {
+    border-bottom: 1px solid #8FA633;
+}
+#menu ul{
+    background-color: #FFFFFF;
+    position:absolute;
+    left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+    z-index: 9; /* ensure sub navs stay on top of the rest of the page */
+    box-shadow: 0 10px 10px -5px #85888D;
+    width: 100%;
+    min-width: 120px;
+}
+#menu ul li{
+    float:none;
+    margin: 15px 15px 15px 0;
+}
+#menu ul a{
+    white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+#menu li:hover ul{ /* Display the dropdown on hover */
+    left:10px; /* Bring back on-screen when needed */
+}
+#menu ul li:hover a, #menu ul li:focus a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+    border-bottom: 1px solid #FFFFFF;
+}
+#menu li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+    text-decoration:none;
+}
+#menu li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+    border-bottom: 1px solid #8FA633;
+}
+
+
+
+
+
+/* ------------------------------------------------------------
+    ELEMENT DEFAULTS
+------------------------------------------------------------ */
+
+/* ----- $Text ----- */
+    /* $BaseText */
+    p, ul {
+        margin-bottom: 7px; /* half the size of the body font which is 14px */
+    }
+
+    
+  
+    h2 {
+        font-weight: normal;
+        font-size: 21px;
+        font-size: 2.1rem;
+        margin-bottom: 10px; /* half the size of the font */
+    }
+
+.lnkLogin {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+
+/* ------------------------------------------------------------
+    MEDIUM WIDTH
+------------------------------------------------------------ */
+@media all and (max-width:1023px) { 
+
+    
+/* ===== LAYOUTS ===== */
+    /* ----- $Positioning ----- */
+    .tabletHide { display: none; } /*this class allows us to easily hide elements such as 'nav' on tablet view, but show it on desktop */
+   
+    
+    
+/* ===== STRUCTURAL CONTAINERS ===== */    
+    /* ----- $PageContainers ----- */
+    header, .pageMain, footer { padding: 0 20px; }
+
+     
+    
+/* ===== OFF CANVAS NAV ===== */ 
+/* below are items required to make an off canvas nav work - most of them are suitable for the page at any width so are not prefaced
+   If John thinks we should preface all with the class .navCollapse to make it clear then everything down to line 207 should be marked with the class */  
+    /* ----- $PageContainers ----- */
+    html { }
+    body { 
+        -webkit-animation: bugfix infinite 1s;  /* make checkbox hack work on android */
+        background-color: #FFFFFF;
+    }
+    /* make checkbox hack work on android */
+    @-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
+    .viewport {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        background: #54585A;
+    }
+
+
+    
+    
+    /* ----- $ContentContainers ----- */
+    .containerCentralContent { 
+        width: 100%; 
+    }
+    .pageMain .containerCentralContent {
+        padding-top: 10px; /* remove most of the top margin on mobiles as there's less space to play with */
+    }
+
+    
+    
+    /* ----- $NavContainers ----- */
+    .containerPage {
+      left: 0;
+      top: 0;
+      position: relative;
+      transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      height: 100%;
+    }
+    /*.chkMainNav { 
+      display: none; / this is actually set in the global css so it's already hidden on desktop
+    } */
+    #chkMainNav:checked ~ .containerPage {
+      left: 80%;
+      box-shadow: 0 -1px 5px #85888D;
+      background: #FFFFFF;
+    }
+
+
+    
+    /* ----- $HeaderDesign ----- */
+    .navCollapse header .containerCentralContent { /* reorder elements in header to allow space for menu icon */
+        text-align: center;
+     }
+
+    .navCollapse .toggleMenu { /* unhide the menu icon */
+        display: block;
+        background-image: url("../images/menu-closed.png"); /* REMEMBER TO ADD IMAGES TO LIVE & FIX REF */ 
+        background-repeat: no-repeat;
+        width: 18px;
+        height: 17px;
+        float: left;
+        cursor: pointer;
+        margin-top: 5px; /* so ligns up better with logo */
+    } 
+    .navCollapse .menuCollapsed { /* unhide the off canvas menu */
+        display: block;
+        position: absolute; 
+        top: 0;
+        left: 0;
+        background-color: #54585A;
+        width: 80%;  
+    }  
+    .navCollapse .lnkMobileLogin {
+        display: block;
+        color: #54585A;
+        float: right;
+        font-size: 12px;
+        font-size: 1.2rem;
+        margin-top: 5px; /* so lines up better with logo */
+    }
+    .navCollapse #menuGlobal { display: none; } /* hide the wide menu */
+    
+     
+    /* ----- $NavDesign ----- */
+    .navCollapse .menuCollapsed ul {
+        width: 100%;
+    }
+    .navCollapse .menuCollapsed a {
+        border-bottom: 1px solid #85888D;
+        color: #FFFFFF;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 16px;
+        font-size: 1.6rem;
+        display: block;
+        padding: 15px 15px 15px 30px;
+        background-color: #54585A;
+    }
+    .navCollapse .menuCollapsed a .subMenuOpened, .navCollapse .menuCollapsed a .subMenuClosed { /* there's a + to show this menu has a secondary menu in it, the link here expands the menu rather than taking you to a page */
+        font-size: 20px;
+        font-size: 2.0rem;
+        margin-right: 7px; 
+    }
+    .navCollapse .menuCollapsed a .subMenuClosed { 
+        margin-left: -20px; /* margin from edge to text is 30px, want to leave 10px on edge then the content here fills the gap: + is 12, - is 7 (5px diff) */
+    }
+    .navCollapse .menuCollapsed a .subMenuOpened { 
+        margin-left: -15px; /* margin from edge to text is 30px, want to leave 10px on edge then the content here fills the gap: + is 12, - is 7 (5px diff) */
+    }
+    .navCollapse .menuCollapsed a:hover, .navCollapse .menuCollapsed a:focus, .navCollapse .menuCollapsed a:active {
+        border-bottom: 1px solid #8FA633;
+        background-color: #85888D;
+    }
+    .navCollapse .menuCollapsed .imgLogo {
+        margin: -5px 0 -10px -20px;
+    }
+    .navCollapse .menuCollapsed .subMenu a {
+        border-top: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 14px;
+        font-size: 1.4rem;
+    } 
+}
+
+
+
+
+
+/* ------------------------------------------------------------
+    NARROW : bulk inherited from the table breakpoint
+------------------------------------------------------------ */
+@media screen and (max-width:720px) {
+
+/* ===== STRUCTURAL CONTAINERS ===== */
+    /* ----- $PageContainers ----- */
+    header, footer { padding: 0 20px; }
+    .pageMain { padding: 0; } /* the sections have their own padding so we take it off the container */
+    
+    
+
+/* ===== LAYOUTS ===== */
+    /* ----- $Positioning ----- */
+    .mobileHide { display: none; } /*this class allows us to easily hide elements such as 'nav' on mobile view, but show it on desktop/tablet */
+    
+     
