@@ -7,7 +7,7 @@ Responsive nav / responsive menu :
 2. If screen wide enough, show nav horizontally
 3. If screen too narrow to fit full nav, collapse into an off canvas nav
 4. Nav is 2 levels (pure css on horizontal view, jQuery to slideToggle on collapsed view)
-5. Off canvas nav is primarily css (jQuery used for slideToggle as in point 4 & detection of height to force equal height between content div and nav)
+5. Off canvas nav is primarily css (jQuery used for slideToggle as in point 4 & detection of height to force equal height between content div and nav when you expand/contract a secondary menu)
 
 
 Things worth knowing
