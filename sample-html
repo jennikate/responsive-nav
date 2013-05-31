@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        
+        <title>Responsive Menu / Responsive Nav</title>
+        
+         <link rel="stylesheet" href="responsive-nav.css">
+         <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+          <script src="assets/js/responsive-nav.js"></script>
+    </head>
+
     <body id="ixdGuide"> <!-- if we place the app name on the body then we can use common classes which can be easily overwritten - rather than having specific classes for things like nav -->
         <div id="viewport" class="viewport"> <!-- ensure we can lock the horizontal scroll on mobile when off canvas nav is open -->
         
@@ -99,3 +113,4 @@
             <div>
         </div>
     </body>
+</html>
