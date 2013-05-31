@@ -1,0 +1,101 @@
+    <body id="ixdGuide"> <!-- if we place the app name on the body then we can use common classes which can be easily overwritten - rather than having specific classes for things like nav -->
+        <div id="viewport" class="viewport"> <!-- ensure we can lock the horizontal scroll on mobile when off canvas nav is open -->
+        
+            <!-- this is the mobile off canvas menu -->
+            <input type="checkbox" class="chkMainNav" id="chkMainNav" />
+            <nav id="menuCollapsed" class="menuCollapsed" role="navigation">                
+                <ul class="clearfix">
+                    <li><a class="menuHasSubmenu"><span class="subMenuClosed">+</span><span class="subMenuOpened hide">-</span>Item One</a>
+                        <ul class="subMenu hide">
+                            <li><a href="">Sub 1</a></li>
+                            <li><a href="">Sub 2</a></li>
+                            <li><a href="">Sub 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="menuHasSubmenu"><span class="subMenuClosed">+</span><span class="subMenuOpened hide">-</span>Item Two</a>
+                        <ul class="subMenu hide">
+                            <li><a href="">Sub A</a></li>
+                            <li><a href="">Sub B</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Item Three</a></li>
+                    <li><a href="">Item Four</a></li>
+                    <li><a href="">Item Five</a></li>
+                    <li><a class="menuHasSubmenu"><span class="subMenuClosed">+</span><span class="subMenuOpened hide">-</span>Item Six</a>
+                        <ul class="subMenu hide">
+                            <li><a href="">Sub i</a></li>
+                            <li><a href="">Sub ii</a></li>
+                            <li><a href="">Sub iii</a></li>
+                            <li><a href="">Sub iv</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- end mobile off canvas menu -->
+            
+            <!-- start main container -->
+            <div id="containerPage" class="containerPage">
+                <header>
+                    <div class="containerCentralContent clearfix">
+                        <label for="chkMainNav" class="toggleMenu" onclick>MENU</label><!-- empty on click so the checkbox hack works on ios <6 -->
+                        <a class="lnkMobileLogin">Login</a> <!-- this is the mobile position & on a narrow view this sits in the header rather than the nav -->
+                        <!--  the nav can be styled based on the body id -->
+                        <nav id="menuGlobal" class="right clearfix" role="navigation">
+                            <a class="lnkLogin">Login</a> <!-- this is the default position & normally the login link hence why it's in the nav element -->
+                            <ul id="menu" class="clearfix">
+                                <li><a href="#" onClick="return true">Item One</a><!-- onclick used because we've got a subnav -->
+                                    <ul class="subMenu">
+                                        <li><a href="">Sub 1</a></li>
+                                        <li><a href="">Sub 2</a></li>
+                                        <li><a href="">Sub 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" onClick="return true">Item Two</a>
+                                    <ul class="subMenu">
+                                        <li><a href="">Sub A</a></li>
+                                        <li><a href="">Sub B</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Item Three</a></li>
+                                <li><a href="">Item Four</a></li>
+                                <li><a href="">Item Five</a></li>
+                                <li>
+                                    <a href="#" onClick="return true">Item Six</a>
+                                    <ul class="subMenu">
+                                        <li><a href="">Sub i</a></li>
+                                        <li><a href="">Sub ii</a></li>
+                                        <li><a href="">Sub iii</a></li>
+                                        <li><a href="">Sub iv</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+                
+                <div class="pageMain">
+                    <div class="containerCentralContent clearfix">
+
+                        <section class="content">
+                        <h2>Here is the page with it's content on it</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, mel ad doctus molestie accommodare, nec ex hinc harum quando. Eu sed nostro vocibus tacimates. Duo ea quod volutpat temporibus. Nec at oratio disputationi, vix an dicant suscipit persecuti. Nonumes disputando at has, no oratio nominavi necessitatibus per, quem saepe sapientem pro id.
+                            </p>
+                            <p>
+                                Nec ex regione electram democritum. Vero vocent bonorum ea mei, in qui lucilius perfecto. Equidem utroque vulputate nam te, at duo nonumes efficiendi. Cum ea facer primis, at veritus luptatum corrumpit has. An per integre delicata, pri ei ludus antiopam quaerendum.
+                            </p>
+                            <p>
+                                Quis porro nostrud quo et, cu pro iudicabit necessitatibus. Ei eros incorrupte vel. Cum ea dico atqui sententiae. Eligendi voluptua pri ex. At mei habeo civibus verterem, ut mea sale aliquam, populo aliquip ponderum no vis. Eos case maiestatis assueverit an, ceteros sensibus voluptatum an sit.
+                            </p>
+                            <p>
+                               Id mel voluptua reprimique ullamcorper. Laudem minimum adversarium sea et. Sale periculis moderatius ius ut, altera tamquam te his, duo at salutatus mediocritatem. Diceret deleniti repudiare nec ut. Ut velit denique usu, brute regione ut eos, in per tota facilisis omittantur.
+                            </p>
+                            <p>
+                                Ei corpora legendos vulputate sit, ex errem ponderum signiferumque vix, his mucius disputando te. Duo cu libris eirmod periculis. In eos audire postulant abhorreant. Postulant cotidieque ei eos, purto dolor nam at, agam percipit mea no.
+                            </p>
+                        </section>
+                    </div>
+                </div>
+            <div>
+        </div>
+    </body>
